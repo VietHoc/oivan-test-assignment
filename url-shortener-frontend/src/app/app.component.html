@@ -10,29 +10,34 @@
              class="text-field content-row"
              placeholder="Enter URL here . . ."
              id="input-field"
+             [(ngModel)]="url"
              required />
       <button id="shorten"
               type="button"
-              class="content-row button">Shorten URL</button>
+              class="content-row button" (click)="encodeUrl()">Shorten URL</button>
+      <button id="decode"
+              type="button"
+              class="content-row button" (click)="decodeUrl()">Origin URL</button>
       <button type="button"
               id="clear-btn"
-              class="content-row button">Clear</button>
+              class="content-row button" (click)="clear()">Clear</button>
     </div>
 
     <div id="output-div" class="output-container">
       <div class="content-row"
-           id="new-url-label">Your short URL:</div>
+           id="new-url-label">{{textUrl}}</div>
       <div id="new-url"
-           class="content-row"></div>
+           class="content-row">{{newUrl}}</div>
       <button type="button"
               id="copy-btn"
               data-clipboard-target="#new-url"
+              (click)="copyClipboard()"
               class="content-row button">Copy</button>
     </div>
     <div class="error"
          id="error-div">
       <p class="content-row"
-         id="error-text"></p>
+         id="error-text">{{errorMessage}}</p>
     </div>
   </div>
 </main>
