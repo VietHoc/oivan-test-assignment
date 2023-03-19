@@ -1,0 +1,17 @@
+services:
+  web-url-shortener-frontend:
+    build:
+      context: url-shortener-frontend
+    ports:
+      - 4200:4200
+    volumes:
+      - ./url-shortener-frontend:/url-shortener-frontend
+      - /url-shortener-frontend/node_modules
+  web-url-shortener-backend:
+    build:
+      context: url-shortener-backend
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ./url-shortener-backend:/url-shortener-backend
+    ports:
+      - "3000:3000"
