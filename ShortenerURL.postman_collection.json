@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "397eab01-c36f-473d-b5fc-66c254d1c3f3",
+		"name": "Oivan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3247053"
+	},
+	"item": [
+		{
+			"name": "Encode url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"original_url\": \"https://codesubmit.io/library/react\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/endcode",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"endcode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decode url",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"short_url\": \"http://localhost:3000/uoeYgw\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/decode",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"decode"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
