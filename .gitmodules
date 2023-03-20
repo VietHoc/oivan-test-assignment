@@ -1,0 +1,3 @@
+[submodule "url-shortener-backend"]
+	path = url-shortener-backend
+	url = git@github.com:VietHoc/url-shortener-backend.git
